@@ -1,0 +1,64 @@
+﻿@model IEnumerable<SuperHeroProject.Models.SuperHero>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ID)
+            </th>
+            <th>
+                @Html.ActionLink(@Html.DisplayNameFor(model => model.Name), "Details", new { /* id=item.PrimaryKey */ })
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AlterEgo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PrimaryAbility)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.SecondaryAbility)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Catchphrase)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ID)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AlterEgo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PrimaryAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.SecondaryAbility)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Catchphrase)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
