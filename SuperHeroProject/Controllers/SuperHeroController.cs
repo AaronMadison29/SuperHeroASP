@@ -11,7 +11,7 @@ namespace SuperHeroProject.Controllers
 {
     public class SuperHeroController : Controller
     {
-        ApplicationDbContext _context;
+        private readonly ApplicationDbContext _context;
 
         public SuperHeroController(ApplicationDbContext context)
         {
