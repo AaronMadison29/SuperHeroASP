@@ -28,7 +28,7 @@ namespace SuperHeroProject.Controllers
         // GET: SuperHero/Details/5
         public ActionResult Details(int id)
         {
-            SuperHero superHero = _context.superHeroes.Where(x => x.ID == id).SingleOrDefault();
+            SuperHero superHero = _context.superHeroes.Find(id);
             return View(superHero);
         }
 
@@ -63,18 +63,23 @@ namespace SuperHeroProject.Controllers
         // GET: SuperHero/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            return View(_context.superHeroes.Find(id));
         }
 
         // POST: SuperHero/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, SuperHero superHero)
         {
             try
             {
-                // TODO: Add update logic here
-
+                SuperHero editedHero = _context.superHeroes.Find(id);
+                editedHero.Name = superHero.Name;
+                editedHero.AlterEgo = superHero.AlterEgo;
+                editedHero.PrimaryAbility = superHero.PrimaryAbility;
+                editedHero.SecondaryAbility = superHero.SecondaryAbility;
+                editedHero.Catchphrase = superHero.Catchphrase;
+                _context.SaveChanges();
                 return RedirectToAction(nameof(Index));
             }
             catch
