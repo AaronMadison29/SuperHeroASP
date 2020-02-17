@@ -7,36 +7,34 @@
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
-<body>
+<body style="background:url(/img/IronMan.jpg); background-size:100% 100%">
     <header>
         <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="nav-link" href="/Home/Index"><img src="~/img/AvengersLogo.png" style="height: 100px; width:100px;" /> <span class="sr-only">(current)</span></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor02" aria-controls="navbarColor02" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
             <div class="collapse navbar-collapse" id="navbarColor02">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="../Home/Index">Home <span class="sr-only">(current)</span></a>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/SuperHero/Index">Index</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="../SuperHero/Index">Index</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../SuperHero/Create">Create</a>
+                        <a class="nav-link" href="/SuperHero/Create">Create</a>
                     </li>
                 </ul>
             </div>
         </nav>
     </header>
-    <div class="container" style="background-image:url(../img/Avengers.jpg)">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    <div class="" style=" margin-left:0; margin-right:0">
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
     </div>
-
-    <footer class="border-top footer text-muted">
+    <footer class="border-top footer text-muted bg-dark">
         <div class="container">
             &copy; 2020 - SuperHeroProject - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
@@ -46,4 +44,6 @@
     <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("Scripts", required: false)
 </body>
+
+
 </html>

@@ -4,61 +4,62 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
+    <div class=" container bg-dark text-center" style="margin-top:20px ">
+        <div>
+            <h1 style="width:inherit">Index</h1>
 
-<p>
-    <a asp-action="Create">Create New</a>
-</p>
-<table class="table">
-    <thead>
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.ID)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Name)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.AlterEgo)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.PrimaryAbility)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.SecondaryAbility)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.Catchphrase)
-            </th>
-            <th></th>
-        </tr>
-    </thead>
-    <tbody>
-@foreach (var item in Model) {
-        <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.ID)
-            </td>
-            <td>
-                @Html.ActionLink(item.Name, "Details", new { id = item.ID })
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.AlterEgo)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.PrimaryAbility)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.SecondaryAbility)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Catchphrase)
-            </td>
-            <td>
-                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
-                @Html.ActionLink("Delete", "Delete", new { id = item.ID })
-            </td>
-        </tr>
-}
-    </tbody>
-</table>
+            <p>
+        </div>
+            <a asp-action="Create">Create New</a>
+        </p>
+
+        <table class="table">
+            <thead>
+                <tr class="table-dark">
+                    <th>
+                        @Html.DisplayNameFor(model => model.Name)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.AlterEgo)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.PrimaryAbility)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.SecondaryAbility)
+                    </th>
+                    <th>
+                        @Html.DisplayNameFor(model => model.Catchphrase)
+                    </th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr class="table-dark">
+                        <td>
+                            @Html.ActionLink(item.Name, "Details", new { id = item.ID })
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.AlterEgo)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.PrimaryAbility)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.SecondaryAbility)
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.Catchphrase)
+                        </td>
+                        <td>
+                            @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+                            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
